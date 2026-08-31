@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/*
+ * Palette takes its cue from the firm's building at 800 Westchester Avenue:
+ * white stone, glass, water, a lot of daylight. Cool rather than warm.
+ */
+:root {
+  --paper: #f7f8f9;
+  --ink: #12161b;
+  --muted: #58616c;
+  --rule: #dde1e5;
+  --strip: #eceff2;
+  --slate: #1e262f;
+  --slate-soft: #a3adb8;
+  --slate-rule: #333e4a;
+
+  /*
+   * One accent, used only on hairlines and markers — the wordmark rule, the
+   * active nav item, the tick before a section label. Never on type, never on
+   * a fill. A single muted brass against cool slate is what makes the page
+   * look drawn rather than generated; two accents would undo it.
+   */
+  --accent: #b08d4f;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
+  --color-strip: var(--strip);
+  --color-navy: var(--slate);
+  --color-navy-soft: var(--slate-soft);
+  --color-navy-rule: var(--slate-rule);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Letterspaced uppercase used for the wordmark and section labels. */
+.eyebrow {
+  font-size: 0.6875rem;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Nav items sit a touch tighter so four of them clear a 360px screen. */
+.navitem {
+  font-size: 0.6875rem;
+  line-height: 1.2;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .navitem {
+    letter-spacing: 0.16em;
+  }
+}
+
+/* Data rail beneath the hero: registration facts set as figures, not prose. */
+.rail {
+  font-size: 0.6875rem;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background: #dbe3ea;
+}
