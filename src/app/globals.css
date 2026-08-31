@@ -1,6 +1,48 @@
 @import "tailwindcss";
 
 :root {
+  --paper: #fbfaf7;
+  --ink: #14171c;
+  --muted: #5b6472;
+  --rule: #ded8cd;
+  --navy: #151d29;
+  --navy-soft: #9aa4b2;
+  --navy-rule: #2a3444;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
+  --color-navy: var(--navy);
+  --color-navy-soft: var(--navy-soft);
+  --color-navy-rule: var(--navy-rule);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Letterspaced uppercase used for the wordmark and section labels. */
+.eyebrow {
+  font-size: 0.6875rem;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+::selection {
+  background: #e8e2d6;
+}
+@import "tailwindcss";
+
+:root {
   --background: #fbfaf8;
   --foreground: #14181d;
   --muted: #5b6470;
